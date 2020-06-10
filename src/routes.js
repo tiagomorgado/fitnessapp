@@ -17,10 +17,14 @@ routes.get('/status', (req, res)=>{
     res.send({status: 200});
 })
 
-//TODO SubscribeController
+//TODO RegistrationController
+//TODO Get a registration ID
 //TODO ApprovalController
 //TODO RejectionController
 
+
+//Registration
+routes.post('/registration/:eventId', )
 
 //Login Router
 routes.post('/login', LoginController.store)
