@@ -30,7 +30,6 @@ routes.get('/dashboard/:sport', DashboardController.getAllEvents)
 routes.get('/dashboard', DashboardController.getAllEvents)
 routes.get('/event/:eventId', DashboardController.getEventById)
 
-
 //Events Router
 routes.post('/event', upload.single("thumbnail"), EventController.createEvent)
 routes.delete('/event/:eventId', EventController.delete)
