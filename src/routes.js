@@ -5,8 +5,9 @@ const multer = require('multer');
 //Created Files
 const UserController = require('./controllers/UserController');
 const EventController = require('./controllers/EventController');
-const DashboardController = require('./controllers/DashboardController')
-const LoginController = require('./controllers/LoginController')
+const DashboardController = require('./controllers/DashboardController');
+const LoginController = require('./controllers/LoginController');
+const RegistrationController = require('./controllers/RegistrationController');
 const uploadConfig = require('./config/upload');
 
 //Instances
@@ -17,14 +18,14 @@ routes.get('/status', (req, res)=>{
     res.send({status: 200});
 })
 
-//TODO RegistrationController
-//TODO Get a registration ID
+
 //TODO ApprovalController
 //TODO RejectionController
 
 
 //Registration
-routes.post('/registration/:eventId', )
+routes.post('/registration/:eventId', RegistrationController.create)
+routes.get('/registration/:registration_id', RegistrationController.getRegistration);
 
 //Login Router
 routes.post('/login', LoginController.store)
