@@ -20,10 +20,6 @@ routes.get('/status', (req, res)=>{
     res.send({status: 200});
 })
 
-
-
-
-
 //Registration
 routes.post('/registration/:eventId', RegistrationController.create);
 routes.get('/registration/:registration_id', RegistrationController.getRegistration);

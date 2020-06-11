@@ -9,27 +9,32 @@ module.exports = {
 
             if(!existentUser) {
                 const hashedPassword = await bcrypt.hash(password, 10)
-                const user = await User.createUser({
+                const user = await User.create({
                     firstName,
                     lastName,
                     email,
                     password:hashedPassword
                 })
 
-                return res.json(user);
+                return res.json({
+                    _id:user._id,
+                    email:user.email,
+                    firstName: user.firstName,
+                    lastName: user.lastName
+                });
             }
 
             return res.status(400).json({
-                message: 'User already exists. Do you want to login?'
-            });
+                message: 'User already exists. Do you want to login?',
+            })
 
 
-        }catch(error){
-            throw Error('Error while registering new user : ${error}')
+        }catch(err){
+            throw Error(`Error while Registering new user : ${err}`)
         }
     },
 
-    async getUserById(req, res) {
+    async getUserById(req,res) {
         const {userId} = req.params
 
         try{
