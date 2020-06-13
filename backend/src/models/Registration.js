@@ -5,11 +5,11 @@ const RegistrationSchema = new mongoose.Schema({
     approved: Boolean,
     sport: String,
     user: {
-        type: mongoose.Schema.Types.ObjectID,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
     event: {
-        type: mongoose.Schema.Types.ObjectID,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Event"
     }
 });

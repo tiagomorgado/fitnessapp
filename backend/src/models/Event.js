@@ -8,7 +8,7 @@ const EventSchema = new mongoose.Schema({
     sport: String,
     date: Date,
     user:{
-        type: mongoose.Schema.Types.ObjectID,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     }
 }, {
