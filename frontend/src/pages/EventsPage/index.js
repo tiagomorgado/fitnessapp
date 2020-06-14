@@ -43,6 +43,7 @@ export default function EventsPage() {
                 thumbnail !== null
             ) {
                 console.log("Event has been sent")
+                console.log(eventData)
                 await api.post("/event", eventData, { headers: { user_id } })
                 console.log("Waiting to save")
                 console.log(eventData)
