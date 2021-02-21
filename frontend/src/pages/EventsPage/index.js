@@ -18,6 +18,7 @@ export default function EventsPage() {
     }, [thumbnail])
 
 
+    
     console.log(title, description, price, sport)
 
     const submitHandler = async (evt) => {
